@@ -106,7 +106,7 @@ def f_detect_disk_readonly():
     f_logfile = open("/proc/mounts", "r")
     ts = int(time.time())
     for line in f_logfile:
-        m = re.match("^\/dev\/sd(\w+) [\w\W]* ro,[\w\W]*", line)
+        m = re.match("^\/dev\/\w+ [\w\W]* ro,[\w\W]*", line)
         if m:
             device = line.split(" ")[0]
             arr.append(device)
